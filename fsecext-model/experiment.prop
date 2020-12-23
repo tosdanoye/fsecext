@@ -1,0 +1,33 @@
+# set the path to the folder where all your data is located
+DATA_PATH=/experiments/adjdata
+# does the file has a header?
+HEADER=true 
+# specify csv column separator
+SEPARATOR=;
+# specify ratio for splitting dataset into train and test
+TRAIN_SIZE=0.95
+# specify how many times we should train. This concerns training. Best model is selected for validation stage
+NUM_EXP=1
+# specify index of class label	
+CLASS_INDEX=1
+# get the ratios (separated by comma) for sampling minority class - SBR : NSBR (SBR is always 1) => 1:0.5, 1:1, 1:1.5, 1:2
+CLASS_BALANCE_RATIOS=0.5
+# algorithms to use for training a model. LR-Logistic Regression,NB-Naive Bayes,KNN-K Nearest Neighbor,SVM-Support Vector Machine,RF-Random Forest
+ALGORITHMS=KNN
+# which features should be used (external or internal): fsec-tfidf, fsec-ext
+#	TFIDFHigh,		// fsec-tfidf
+#	Threat,			// fsec-ext (Features = Threat category)
+#	Control,		// fsec-ext (Features = Control category)
+#	TC,				// fsec-ext (Features = Threat + Control categories)
+#	CA,				// fsec-ext (Features = Control + Asset categories)
+#	TA,				// fsec-ext (Features = Threat + Asset categories)
+#	TCA,			// fsec-ext (Features = Threat + Control + Asset categories)
+#	TCAI			// fsec-ext (Features = Threat + Control + Asset + Implicit categories)
+FEATURES=TCA
+# include security features in the training dataset {yes,no} {yes} {no}
+INCLUDE_SEC_FEATURES=yes
+# this is a n x m matrix. Where n = train_folder and m = validation_folder. 
+# name of the folder (separated by comma) containing the train and test csv files. Note: csv files must be named as folder_train.csv (e.g. apache_train.csv) and folder_test.csv (apache_test.csv)
+TRAIN_FOLDER_NAMES=chromium
+# name of the folders (separated by comma) containing other projects' csv test files for validation. Note: csv files must be named as folder_test.csv (e.g. derby_test.csv)
+VALIDATION_FOLDER_NAMES=chromium,derby,camel
