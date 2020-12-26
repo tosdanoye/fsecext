@@ -1,6 +1,6 @@
 # README #
 
-This repository host the code base for the experiments reported in the article "An Improved Text Classification Modelling Approach to Identify Security Messages in Heterogeneous Projects" submitted to Software Quality Journal.
+This repository host the code base for the experiments reported in the article "An Improved Text Classification Modelling Approach to Identify Security Messages in Heterogeneous Projects" accepted at the Software Quality Journal.
 
 Details of code setup and experiments
 
